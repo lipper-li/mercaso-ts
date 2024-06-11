@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-standard",
+    "stylelint-config-css-modules"
+  ],
+  "rules": {
+    "selector-class-pattern": "^(?:(ant|k)-.*|[a-z][a-z0-9]*(?:_[a-z0-9]+)*)$",
+    "custom-property-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      {
+        "severity": "warning"
+      }
+    ],
+    "no-descending-specificity": null,
+    "block-no-empty": null,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": [
+          "input-placeholder"
+        ]
+      }
+    ],
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "import-notation": "string",
+    "scss/at-import-partial-extension": "always"
+  },
+  "ignoreFiles": []
+}
