@@ -24,8 +24,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": ["lib/@types", "node_modules/@types"],
+    "typeRoots": ["lib/@types", "node_modules/@types"]
   },
-  "include": ["src"],
+  "include": ["src", "eslint.config.mjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,17 +1,18 @@
+/* stylelint-disable selector-class-pattern */
 $primary-color: #1890ff;
-
 $dark-border-color: #4e4e4e;
 $light-border-color: #e4e7ed;
 
-.APP[color-mode="light"] {
-	--surface1: #ffffff;
-	--surface2: #000000;
+.APP[color-mode='light'] {
+  --surface1: #fff;
+  --surface2: #000;
 }
 
-.APP[color-mode="dark"] {
-	--surface1: #000000;
-	--surface2: #ffffff;
+.APP[color-mode='dark'] {
+  --surface1: #000;
+  --surface2: #fff;
 }
+
 .textColor {
-	color: var(--surface1);
+  color: var(--surface1);
 }

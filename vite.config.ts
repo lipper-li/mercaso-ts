@@ -3,9 +3,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { ConfigEnv, defineConfig, loadEnv, UserConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 import { createHtmlPlugin } from 'vite-plugin-html';
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function wrapperEnv(envConf: Record<string, any>) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ret: Record<string, any> = {};
   for (const envName of Object.keys(envConf)) {
     let relName = envConf[envName];
@@ -22,6 +20,7 @@ export function wrapperEnv(envConf: Record<string, any>) {
     ret[envName] = relName as string;
     process.env[envName] = relName as string;
   }
+
   return ret;
 }
 
@@ -46,15 +45,14 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
           brotliSize: true,
           filename: 'dist/bundle.html',
         }),
-      viteEnv.VITE_BUILD_GZIP &&
-        viteCompression({
-          verbose: true,
-          disable: false,
-          deleteOriginFile: false,
-          threshold: 10240,
-          algorithm: 'gzip',
-          ext: '.gz',
-        }),
+      viteCompression({
+        verbose: true,
+        disable: false,
+        deleteOriginFile: false,
+        threshold: 10240,
+        algorithm: 'gzip',
+        ext: '.gz',
+      }),
     ],
     resolve: {
       alias: {

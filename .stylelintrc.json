@@ -2,7 +2,8 @@
   "extends": [
     "stylelint-config-standard-scss",
     "stylelint-config-standard",
-    "stylelint-config-css-modules"
+    "stylelint-config-css-modules",
+    "stylelint-prettier/recommended"
   ],
   "rules": {
     "selector-class-pattern": "^(?:(ant|k)-.*|[a-z][a-z0-9]*(?:_[a-z0-9]+)*)$",
@@ -29,7 +30,8 @@
       }
     ],
     "import-notation": "string",
-    "scss/at-import-partial-extension": "always"
+    "scss/at-import-partial-extension": "always",
+    "prettier/prettier": true
   },
   "ignoreFiles": []
 }
